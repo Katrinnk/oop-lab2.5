@@ -1,0 +1,29 @@
+#pragma once
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+class Number
+{
+public:
+	float x1, x2;
+public:
+	float getDodanok1() const { return x1; }
+	float getDodanok2() const { return x2; }
+
+	void setDodanok1(float value) { x1 = value; }
+	void setDodanok2(float value) { x2 = value; }
+
+
+	Number();
+	Number(float, float);
+	operator string() const;     //виведення значень на екран
+
+	friend ostream& operator << (ostream&, const Number&); //перевантаження функції виведення
+	friend istream& operator >> (istream&, Number&); //перевантаження функції введення
+
+	void Div_x1_x2();
+	void Div_x2_x1();
+	void Sum();
+};
+
